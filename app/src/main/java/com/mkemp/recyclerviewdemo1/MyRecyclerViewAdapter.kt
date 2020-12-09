@@ -4,8 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.list_item.view.*
 
 class MyRecyclerViewAdapter : RecyclerView.Adapter<MyViewHolder>() {
+
+    val fruitsList = listOf("Mango", "Apple", "Banana", "Pear", "Orange")
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -14,11 +17,12 @@ class MyRecyclerViewAdapter : RecyclerView.Adapter<MyViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return 5 // 5 rows
+        return fruitsList.size
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
+        val fruit = fruitsList[position]
+        holder.view.name_text_view.text = fruit
     }
 }
 
