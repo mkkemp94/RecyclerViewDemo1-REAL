@@ -8,6 +8,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity()
 {
+    val fruitsList = listOf("Mango", "Apple", "Banana", "Pear", "Orange")
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -17,6 +19,6 @@ class MainActivity : AppCompatActivity()
         // Not recommended for larger projects
         my_recycler_view.setBackgroundColor(Color.YELLOW)
         my_recycler_view.layoutManager = LinearLayoutManager(this)
-        my_recycler_view.adapter = MyRecyclerViewAdapter()
+        my_recycler_view.adapter = MyRecyclerViewAdapter(fruitsList)
     }
 }

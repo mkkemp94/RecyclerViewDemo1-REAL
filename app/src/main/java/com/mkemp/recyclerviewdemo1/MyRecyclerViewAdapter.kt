@@ -6,9 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class MyRecyclerViewAdapter : RecyclerView.Adapter<MyViewHolder>() {
-
-    val fruitsList = listOf("Mango", "Apple", "Banana", "Pear", "Orange")
+class MyRecyclerViewAdapter(val fruitsList: List<String>) : RecyclerView.Adapter<MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
